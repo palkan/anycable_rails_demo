@@ -74,6 +74,9 @@ COPY . .
 
 RUN SECRET_KEY_BASE=1 CABLE_URL=ws://fake.local bundle exec rails assets:precompile
 
+ENV RAILS_SERVE_STATIC_FILES=true
+ENV RAILS_LOG_TO_STDOUT=true
+
 # Entrypoint prepares the database.
 ENTRYPOINT ["/app/bin/docker-entrypoint"]
 
